@@ -1,7 +1,7 @@
 import React from 'react'
 import estilo from './Home.module.css'
 import posts from 'json/posts.json'
-import Post from 'components/Post'
+import PostCard from 'components/PostCard'
 
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
         <ul className={estilo.posts}>
           {posts.map((post) => (
             <li key={post.id}>
-              <Post post={post} />
+              <PostCard post={post} />
             </li>
           ))}
         </ul>

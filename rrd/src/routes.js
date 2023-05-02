@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './screens/Home';
-import Sobre from './screens/Sobre';
-import NotFound from './screens/NotFound';
+import Home from './screens/Home/Home';
+import Sobre from './screens/Sobre/Sobre';
+import NotFound from './screens/NotFound/NotFound';
 import Rodape from './components/Rodape/Rodape';
 import Menu from './components/Menu/Menu';
 import PaginaPadrao from 'components/PaginaPadrao';
+import Post from 'screens/Posts/Post';
 
 export default function App() {
   return (
@@ -13,9 +14,10 @@ export default function App() {
       <Menu />
       <Routes>
         <Route path="/" element={<PaginaPadrao />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/sobre" element={<Sobre />} />
+          <Route index element={<Home />} />
+          <Route path="sobre" element={<Sobre />} />
         </Route>
+          <Route path='post/:id' element={<Post />} />
 
         {/* 
         Na rota raiz a estrutura a ser renderizada eh 

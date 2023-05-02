@@ -3,6 +3,7 @@ import {useLocation } from 'react-router-dom'
 import estilo from './Menu.module.css'
 import MenuLink from '../MenuLink/MenuLink.js';
 export default function Menu() {
+    //pega as informacoes de url como pathname
     const localizacao=useLocation().pathname;
     console.log(localizacao);
     return (
